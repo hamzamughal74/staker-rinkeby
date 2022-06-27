@@ -8,7 +8,7 @@ dataSources:
     source:
       address: '0xC36442b4a4522E871399CD717aBDD847Ab11FE88'
       abi: NFTPositionsManager
-      startBlock: 99999999
+      startBlock: 10875867
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.6
@@ -43,7 +43,7 @@ dataSources:
     source:
       address: '0xc462aB5e66067153Bf1B368493E4744C1cA4BeC9'
       abi: UniV3Staker
-      startBlock: 99999999
+      startBlock: 10875867
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.6
