@@ -2,14 +2,48 @@ specVersion: 0.0.4
 schema:
   file: ./schema.graphql
 dataSources:
-  
+  - kind: ethereum/contract
+    name: NFTPositionsManager
+    network: rinkeby
+    source:
+      address: '0xC36442b4a4522E871399CD717aBDD847Ab11FE88'
+      abi: NFTPositionsManager
+      startBlock: 10875867
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - Approval
+        - ApprovalForAll
+        - Collect
+        - DecreaseLiquidity
+        - IncreaseLiquidity
+        - Transfer
+      abis:
+        - name: NFTPositionsManager
+          file: ./abis/NFTPositionsManager.json
+      eventHandlers:
+        - event: Approval(indexed address,indexed address,indexed uint256)
+          handler: handleApproval
+        - event: ApprovalForAll(indexed address,indexed address,bool)
+          handler: handleApprovalForAll
+        - event: Collect(indexed uint256,address,uint256,uint256)
+          handler: handleCollect
+        - event: DecreaseLiquidity(indexed uint256,uint128,uint256,uint256)
+          handler: handleDecreaseLiquidity
+        - event: IncreaseLiquidity(indexed uint256,uint128,uint256,uint256)
+          handler: handleIncreaseLiquidity
+        - event: Transfer(indexed address,indexed address,indexed uint256)
+          handler: handleTransfer
+      file: ./src/nft-positions-manager-mapping.ts
   - kind: ethereum/contract
     name: UniV3Staker
     network: rinkeby
     source:
       address: '0xe34139463bA50bD61336E0c446Bd8C0867c6fE65'
       abi: UniV3Staker
-      startBlock: 9875867
+      startBlock: 10875867
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.6
