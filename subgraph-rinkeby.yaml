@@ -41,7 +41,7 @@ dataSources:
     name: UniV3Staker
     network: rinkeby
     source:
-      address: '0xe34139463bA50bD61336E0c446Bd8C0867c6fE65'
+      address: '0xc462aB5e66067153Bf1B368493E4744C1cA4BeC9'
       abi: UniV3Staker
       startBlock: 10875867
     mapping:
