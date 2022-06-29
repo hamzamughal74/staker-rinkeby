@@ -8,7 +8,7 @@ dataSources:
     source:
       address: '0xC36442b4a4522E871399CD717aBDD847Ab11FE88'
       abi: NFTPositionsManager
-      
+      startBlock: 8894476
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.6
@@ -41,9 +41,9 @@ dataSources:
     name: UniV3Staker
     network: rinkeby
     source:
-      address: '0xc462aB5e66067153Bf1B368493E4744C1cA4BeC9'
+      address: '0xe34139463bA50bD61336E0c446Bd8C0867c6fE65'
       abi: UniV3Staker
-      
+      startBlock: 8894476
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.6
